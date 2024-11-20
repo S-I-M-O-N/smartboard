@@ -28,7 +28,7 @@ NODE_ENV="gran" UUID="f6a83f1136d3" PORT=443 KCAPP_API="remoteserver.net" PROTOC
 
 For detailed information and usage, see the [Wiki](https://github.com/kcapp/smartboard/wiki)
 
-For additional information on the Granboard protocol, see [ESP32-GranBoard-Client)](https://github.com/SoftCyD/ESP32-GranBoard-Client)
+For additional information on the Granboard protocol, see [ESP32-GranBoard-Client](https://github.com/SoftCyD/ESP32-GranBoard-Client)
 
 
 ### Environment variables
