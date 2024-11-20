@@ -1,15 +1,17 @@
 {
     "name": "kcapp-smartboard",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "private": true,
     "scripts": {
         "start": "NODE_ENV=prod node kcapp-smartboard",
+        "gran": "NODE_ENV=gran node kcapp-smartboard",
         "dev": "node kcapp-smartboard"
     },
     "dependencies": {
         "debug": "^4.3.2",
         "kcapp-sio-client": "github:kcapp/kcapp-sio-client#4f298b816e01e689d219abd55a6d4548bc2352f4",
-        "noble": "^1.9.1"
+	"@abandonware/bluetooth-hci-socket": "^0.5.3-12",
+        "@abandonware/noble": "^1.9.2-25"
     },
     "optionalDependencies": {
         "rpi-gpio": "^2.1.7"
