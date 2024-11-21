@@ -30,8 +30,10 @@ const CHARACTERISTIC_THROW_NOTIFICATIONS = "442f15718a009a28cbe1e1d4212d53eb";
  * @param {string} message - Message sent by board
  */
 function translate(message) {
-    for (let i = 0; i < BOARD.length; i++) {
-            if (BOARD[i] === message) {
+    for (let i = 0; i < BOARD.length+1; i++) {
+            if (i == BOARD.length) {
+              return "ERROR";
+            } else if (BOARD[i] === message) {
               return VALUES[i];
             }
     }
@@ -105,11 +107,12 @@ exports.initialize = (peripheral, buttonNumber, throwCallback, playerChangeCallb
 
         throwNotifyCharacteristic.on('data', (data, isNotification) => {
           var rawValue = data.toString();
-          if (rawValue == "BTN@") {
+          var value = translate(rawValue);
+          if (value == "BTN") {
             playerChangeCallback();
-          } else if (rawValue == "GB5;101") {
+          } else if (value == "ERROR") {
+            debug(`Message from board could not be translated: ${rawValue}`);
           } else {
-              var value = translate(rawValue);
               var dart = {
                 score: parseInt(value.split("-")[0]),
                 multiplier: parseInt(value.split("-")[1])
