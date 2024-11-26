@@ -1,5 +1,5 @@
 var debug = require('debug')('kcapp-smartboard:board');
-var noble = require('noble');
+var noble = require('@abandonware/noble');
 
 /** List containing all numbers on the board. Used to shift scores when board is rotated */
 const BOARD = [15, 2, 17, 3, 19, 7, 16, 8, 11, 14, 9, 12, 5, 20, 1, 18, 4, 13, 6, 10];
